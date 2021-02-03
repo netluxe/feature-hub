@@ -19,8 +19,7 @@
     "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
-      "@feature-hub/*": ["packages/*/src/index.ts"],
-      "webpack": ["node_modules/webpack/types.d.ts"]
+      "@feature-hub/*": ["packages/*/src/index.ts"]
     },
     "plugins": [{"name": "typescript-tslint-plugin"}]
   }

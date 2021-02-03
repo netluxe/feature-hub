@@ -13,11 +13,15 @@
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
+    "skipLibCheck": true,
     "lib": ["dom", "es2017"],
     "jsx": "react",
     "experimentalDecorators": true,
     "baseUrl": ".",
-    "paths": {"@feature-hub/*": ["packages/*/src/index.ts"]},
+    "paths": {
+      "@feature-hub/*": ["packages/*/src/index.ts"],
+      "webpack": ["node_modules/webpack/types.d.ts"]
+    },
     "plugins": [{"name": "typescript-tslint-plugin"}]
   }
 }

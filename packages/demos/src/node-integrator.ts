@@ -1,6 +1,6 @@
 import {Css} from '@feature-hub/react';
 import express from 'express';
-import webpack from 'webpack';
+// import webpack from 'webpack';
 
 export interface AppRendererOptions {
   readonly port: number;
@@ -33,8 +33,7 @@ export function loadNodeIntegrator(
   nodeIntegratorFilename: string
 ): AppRenderer | undefined {
   try {
-    const outputFileSystem: webpack.InputFileSystem & webpack.OutputFileSystem =
-      res.locals.webpack.devMiddleware.outputFileSystem;
+    const outputFileSystem = res.locals.webpack.devMiddleware.outputFileSystem;
 
     const {outputPath} = res.locals.webpack.devMiddleware.stats.toJson();
 

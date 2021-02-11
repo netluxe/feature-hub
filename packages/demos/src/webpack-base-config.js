@@ -31,13 +31,12 @@ const webpackBaseConfig = {
   resolve: {
     extensions: ['.js', '.json', '.ts', '.tsx'],
     plugins: [
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       new TsConfigPathsPlugin({
         configFile: path.join(__dirname, '../tsconfig.json'),
       }),
     ],
-  },
-  resolveLoader: {
-    modules: [path.join(__dirname, '../node_modules'), 'node_modules'],
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -54,7 +53,7 @@ const webpackBaseConfig = {
  * @return {webpack.Configuration}
  */
 const createNodeIntegratorWebpackConfig = (dirname) =>
-  merge.smart(webpackBaseConfig, {
+  merge.merge(webpackBaseConfig, {
     entry: path.join(dirname, './integrator.node.tsx'),
     output: {
       filename: 'integrator.node.js',
